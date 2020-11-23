@@ -36,6 +36,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    // https://i18n.nuxtjs.org/
+    'nuxt-i18n',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -58,6 +60,21 @@ export default {
         },
       },
     },
+  },
+
+  // i18n module configuration (https://i18n.nuxtjs.org/basic-usage/)
+  i18n: {
+    locales: [
+      { code: 'ja', iso: 'ja-JP', file: 'ja.json' },
+      { code: 'en', iso: 'en-US', file: 'en.json' },
+    ],
+    defaultLocale: 'ja',
+    vueI18n: {
+      fallbackLocale: 'ja',
+    },
+    vueI18nLoader: true,
+    langDir: 'locales/', // 翻訳ファイルのディレクトリパス,
+    lazy: true, // 遅延読み込みの有効化
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
